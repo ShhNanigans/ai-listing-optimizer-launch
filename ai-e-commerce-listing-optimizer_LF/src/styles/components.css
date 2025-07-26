@@ -1,0 +1,264 @@
+/* Component Styles - Non-critical, loaded after critical CSS */
+
+/* Results container and components */
+#results-container {
+  margin-top: var(--spacing-lg);
+}
+
+.results-section {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid #e9ecef;
+}
+
+.results-section h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Recommendations grid */
+.recommendations-grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.recommendation-card {
+  background: #f8f9fa;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.recommendation-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+  background: var(--color-surface);
+  padding: var(--spacing-md);
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.card-body {
+  padding: var(--spacing-md);
+}
+
+/* Copy buttons */
+.copy-btn {
+  background: none;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.copy-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.copy-btn.copied {
+  background: var(--color-success);
+  color: white;
+  border-color: var(--color-success);
+}
+
+/* Keywords section */
+.keywords-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.keyword-tag {
+  background: #e9ecef;
+  color: var(--color-primary);
+  padding: 4px var(--spacing-xs);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Sources list */
+.sources-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-sm) 0 0 0;
+}
+
+.sources-list li {
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-xs);
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.sources-list a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+/* Next steps buttons */
+.next-steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.secondary-btn {
+  background: var(--color-surface);
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: #007bff;
+  color: white;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* A/B Test variations */
+.ab-test-variations {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.variation-card {
+  background: var(--color-surface);
+  border: 1px solid #e9ecef;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+}
+
+.variation-title {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Promo content sections */
+.promo-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.promo-content {
+  background: #f8f9fa;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  border: 1px solid #e9ecef;
+  white-space: pre-wrap;
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+/* FAQ styles */
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq-item {
+  margin-bottom: var(--spacing-md);
+  border: 1px solid #e9ecef;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.faq-question {
+  background: #f8f9fa;
+  padding: var(--spacing-md);
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.faq-answer {
+  padding: var(--spacing-md);
+  margin: 0;
+  background: var(--color-surface);
+  line-height: 1.6;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-secondary); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+
+/* Responsive grid adjustments */
+@media (min-width: 768px) {
+  .recommendations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .ab-test-variations {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .next-steps-container {
+    justify-content: center;
+  }
+}
+
+/* Print styles */
+@media print {
+  .copy-btn,
+  .secondary-btn,
+  #generate-btn {
+    display: none;
+  }
+  
+  .recommendation-card,
+  .variation-card {
+    break-inside: avoid;
+  }
+}

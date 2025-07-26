@@ -1,0 +1,165 @@
+/* Critical CSS - Above the fold styles only */
+/* This will be inlined in the HTML head for fastest loading */
+
+/* CSS Custom Properties for better performance */
+:root {
+  --color-primary: #343a40;
+  --color-secondary: #6c757d;
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-error: #dc3545;
+  --color-success: #28a745;
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.05);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 2rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+}
+
+/* Reset and base styles */
+*,*::before,*::after{box-sizing:border-box}
+body{
+  font-family:var(--font-family);
+  background:var(--color-bg);
+  color:var(--color-primary);
+  margin:0;
+  padding:var(--spacing-lg);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+  line-height:1.5;
+}
+
+/* Main container - critical for layout */
+#app-container{
+  width:100%;
+  max-width:800px;
+  background:var(--color-surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm),var(--shadow-md);
+  padding:var(--spacing-xl);
+}
+
+/* Typography - critical elements */
+h1{
+  font-size:var(--font-size-xl);
+  font-weight:700;
+  text-align:center;
+  margin:0 0 var(--spacing-xs) 0;
+  color:var(--color-primary);
+}
+
+.subtitle{
+  text-align:center;
+  color:var(--color-secondary);
+  margin:0 0 var(--spacing-lg) 0;
+  font-size:var(--font-size-base);
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.5;
+}
+
+/* Input container - above the fold */
+.input-container{
+  display:flex;
+  flex-direction:column;
+  gap:var(--spacing-sm);
+  margin-bottom:var(--spacing-lg);
+}
+
+/* Textarea - critical for first interaction */
+#listing-input{
+  width:100%;
+  min-height:200px;
+  padding:var(--spacing-md);
+  border:2px solid #e9ecef;
+  border-radius:var(--radius-sm);
+  font-family:var(--font-family);
+  font-size:var(--font-size-base);
+  resize:vertical;
+  transition:border-color 0.15s ease-in-out;
+}
+
+#listing-input:focus{
+  outline:0;
+  border-color:#007bff;
+  box-shadow:0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+/* Primary button - critical for interaction */
+#generate-btn{
+  background:#007bff;
+  color:white;
+  border:none;
+  padding:var(--spacing-md) var(--spacing-lg);
+  border-radius:var(--radius-sm);
+  font-size:var(--font-size-lg);
+  font-weight:500;
+  cursor:pointer;
+  transition:background-color 0.15s ease-in-out;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--spacing-xs);
+}
+
+#generate-btn:hover:not(:disabled){
+  background:#0056b3;
+}
+
+#generate-btn:disabled{
+  background:#6c757d;
+  cursor:not-allowed;
+}
+
+/* Loader animation - critical for feedback */
+.loader{
+  width:20px;
+  height:20px;
+  border:2px solid rgba(255,255,255,0.3);
+  border-radius:50%;
+  border-top:2px solid white;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg)}
+  100%{transform:rotate(360deg)}
+}
+
+/* Error message - critical for feedback */
+.error-message{
+  background:#f8d7da;
+  color:#721c24;
+  padding:var(--spacing-md);
+  border-radius:var(--radius-sm);
+  border:1px solid #f5c6cb;
+  margin:var(--spacing-sm) 0;
+}
+
+/* Footer */
+footer{
+  margin-top:auto;
+  padding:var(--spacing-lg) 0;
+  color:var(--color-secondary);
+  font-size:0.875rem;
+  text-align:center;
+}
+
+/* Mobile responsiveness - critical */
+@media (max-width:768px){
+  body{padding:var(--spacing-sm)}
+  #app-container{padding:var(--spacing-lg)}
+  h1{font-size:1.5rem}
+  .subtitle{font-size:0.875rem}
+}
